@@ -4,10 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * POJO de "Marca_Coche"
+ * Pojo de "Marca_Coche"
  */
 @Getter @Setter
-public class MarcaCochePojo {
+public class CarBrandPojo {
 
     /**
      * Id de la Marca
