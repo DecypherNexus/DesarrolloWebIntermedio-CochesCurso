@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ICarBrandService {
-
+    
     /**
      * Obtiene una Lista de Marcas de Coches
      * @return Devuelve la Lista de las Marcas de Coches
@@ -26,6 +26,13 @@ public interface ICarBrandService {
      * @return Devuelve la Marca de Coche Guardada
      */
     CarBrandPojo save(CarBrandPojo newCarBrandPojo);
+
+    /**
+     * Actualiza una Marca de Coche
+     * @param updateCarBrandPojo Recibe la Marca de Coche a Actualizar
+     * @return Devuelve la Marca de Coche Actualizada
+     */
+    Optional<CarBrandPojo> update(CarBrandPojo updateCarBrandPojo);
 
     /**
      * Elimina una Marca de Coche por el Id

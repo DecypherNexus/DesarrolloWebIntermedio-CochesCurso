@@ -23,25 +23,55 @@ public class CarBrandController {
      */
     private final ICarBrandService iCarBrandService;
 
-    @GetMapping
+    /**
+     * Obtiene una Lista de Marcas de Coches
+     * @return Devuelve un Código Http "OK" con la Lista de las Marcas de Coches
+     */
+    @GetMapping()
     public ResponseEntity<List<CarBrandPojo>> getAll() {
         return ResponseEntity.ok(iCarBrandService.getAll());
         // return ResponseEntity.status(HttpStatus.OK).body(iCarBrandService.getAll()); -> Notación Alternativa para Crear "ResponseEntity"
         // return new ResponseEntity<>(iCarBrandService.getAll(), HttpStatus.OK); -> Notación Alternativa para Crear "ResponseEntity"
     }
 
+    /**
+     * Obtiene una Marca de Coche por el Id
+     * @param id Recibe el Id de la Marca de Coche
+     * @return Devuelve un Código Http "OK" en el caso de que la Marca de Coche haya sido encontrada o un Código Http "NOT FOUND" en el caso contrario
+     */
     @GetMapping(path = "/{id}")
     public ResponseEntity<CarBrandPojo> getCarBrand(@PathVariable Integer id) {
         return ResponseEntity.of(iCarBrandService.getCarBrand(id));
     }
 
-    @PostMapping
+    /**
+     * Guarda una Nueva Marca de Coche
+     * @param newCarBrandPojo Recibe la Marca de Coche a Guardar
+     * @return Devuelve un Código Http "CREATED" en el caso de que la Marca de Coche haya sido guardada o un Código Http "BAD REQUEST" en el caso contrario
+     */
+    @PostMapping()
     public ResponseEntity<CarBrandPojo> save(@RequestBody CarBrandPojo newCarBrandPojo) {
-        try {
-            return ResponseEntity.status(HttpStatus.CREATED).body(iCarBrandService.save(newCarBrandPojo));
-        } catch (Exception exception) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(iCarBrandService.save(newCarBrandPojo));
+    }
+
+    /**
+     * Actualiza una Marca de Coche
+     * @param updatedCarBrandPojo Recibe la Marca de Coche a Actualizar
+     * @return Devuelve un Código Http "OK" en el caso de que la Marca de Coche haya sido actualizada o un Código Http "BAD REQUEST" en el caso contrario
+     */
+    @PatchMapping()
+    public ResponseEntity<CarBrandPojo> update(@RequestBody CarBrandPojo updatedCarBrandPojo) {
+        return ResponseEntity.of(iCarBrandService.update(updatedCarBrandPojo));
+    }
+
+    /**
+     * Elimina una Marca de Coche por el Id
+     * @param id Recibe el Id de la Marca de Coche a Eliminar
+     * @return Devuelve un Código Http "OK" en el caso de que la Marca de Coche haya sido eliminada o un Código Http "NOT FOUND" en el caso contrario
+     */
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable Integer id) {
+        return new ResponseEntity<>(iCarBrandService.delete(id) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
     }
 
 }

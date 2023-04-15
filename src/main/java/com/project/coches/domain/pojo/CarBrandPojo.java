@@ -6,7 +6,8 @@ import lombok.Setter;
 /**
  * Pojo de "Marca_Coche"
  */
-@Getter @Setter
+@Getter
+@Setter
 public class CarBrandPojo {
 
     /**

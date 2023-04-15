@@ -50,6 +50,23 @@ public class CarBrandService implements ICarBrandService {
     }
 
     /**
+     * Actualiza una Marca de Coche
+     * @param updateCarBrandPojo Recibe la Marca de Coche a Actualizar
+     * @return Devuelve la Marca de Coche Actualizada
+     */
+
+    @Override
+    public Optional<CarBrandPojo> update(CarBrandPojo updateCarBrandPojo) {
+
+        if (iCarBrandRepository.getCarBrand(updateCarBrandPojo.getId()).isEmpty()) {
+            return Optional.empty();
+        }
+
+        return Optional.of(iCarBrandRepository.save(updateCarBrandPojo));
+
+    }
+
+    /**
      * Elimina una Marca de Coche por el Id
      * @param id Recibe el Id de la Marca de Coche a Eliminar
      * @return Devuelve un Valor "True" si se Eliminó y "False" si no se Eliminó
@@ -57,12 +74,12 @@ public class CarBrandService implements ICarBrandService {
     @Override
     public boolean delete(Integer id) {
 
-        try {
-            iCarBrandRepository.delete(id);
-            return true;
-        } catch (Exception exception) {
+        if (iCarBrandRepository.getCarBrand(id).isEmpty()) {
             return false;
         }
+
+        iCarBrandRepository.delete(id);
+        return true;
 
     }
 
