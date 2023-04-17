@@ -1,14 +1,14 @@
-package com.project.coches.domain.pojo;
+package com.project.coches.domain.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Pojo de "Marca_Coche"
+ * DTO de "Marca_Coche"
  */
 @Getter
 @Setter
-public class CarBrandPojo {
+public class CarBrandDTO {
 
     /**
      * Id de la Marca

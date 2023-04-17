@@ -4,11 +4,13 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Entidad de "Marca_Coche"
  */
-@Getter
-@Setter
+@Getter @Setter
 @Entity
 @Table(name = "marca_coche")
 public class CarBrandEntity {
@@ -26,5 +28,11 @@ public class CarBrandEntity {
      */
     @Column(name = "descripcion")
     private String description;
+
+    /**
+     * Relación de Uno a Muchos a "Coches"
+     */
+    @OneToMany(mappedBy = "carBrandEntity", orphanRemoval = true)
+    private List<CarEntity> carEntities;
 
 }
