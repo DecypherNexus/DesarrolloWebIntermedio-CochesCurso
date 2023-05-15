@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Interfaz del Caso de Uso de "Marca_Coche"
+ * Interfaz del Caso de Uso de "Cliente"
  */
 public interface ICustomerUseCase {
 
@@ -24,7 +24,7 @@ public interface ICustomerUseCase {
      * @param cardId Recibe la Cedula del Cliente a Buscar
      * @return Devuelve el Optional del Cliente Encontrado
      */
-    Optional<CustomerDTO> getCustomerByCardId(String cardId);
+    Optional<CustomerDTO> getCustomer(String cardId);
 
     /**
      * Obtiene un Cliente por el Email
@@ -45,10 +45,10 @@ public interface ICustomerUseCase {
     /**
      * Actualiza un Cliente
      *
-     * @param updateCustomerDTO Recibe el Cliente a Actualizar
+     * @param updatedCustomerDTO Recibe el Cliente a Actualizar
      * @return Devuelve el Cliente Actualizado
      */
-    Optional<CustomerDTO> update(CustomerDTO updateCustomerDTO);
+    Optional<CustomerDTO> update(CustomerDTO updatedCustomerDTO);
 
     /**
      * Elimina un Cliente por la Cedula

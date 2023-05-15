@@ -1,6 +1,5 @@
 package com.project.coches.persistance.entity;
 
-import com.project.coches.domain.dto.CarPurchaseRequestDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

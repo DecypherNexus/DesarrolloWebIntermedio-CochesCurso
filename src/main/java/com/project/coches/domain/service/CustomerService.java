@@ -41,8 +41,8 @@ public class CustomerService implements ICustomerUseCase {
      * @return Devuelve el Optional del Cliente Encontrado
      */
     @Override
-    public Optional<CustomerDTO> getCustomerByCardId(String cardId) {
-        return iCustomerRepository.getCustomerByCardId(cardId);
+    public Optional<CustomerDTO> getCustomer(String cardId) {
+        return iCustomerRepository.getCustomer(cardId);
     }
 
     /**
@@ -82,17 +82,17 @@ public class CustomerService implements ICustomerUseCase {
     /**
      * Actualiza un Cliente
      *
-     * @param updateCustomerDTO Recibe el Cliente a Actualizar
+     * @param updatedCustomerDTO Recibe el Cliente a Actualizar
      * @return Devuelve el Cliente Actualizado
      */
     @Override
-    public Optional<CustomerDTO> update(CustomerDTO updateCustomerDTO) {
+    public Optional<CustomerDTO> update(CustomerDTO updatedCustomerDTO) {
 
-        if (iCustomerRepository.getCustomerByCardId(updateCustomerDTO.getCardId()).isEmpty()) {
+        if (iCustomerRepository.getCustomer(updatedCustomerDTO.getCardId()).isEmpty()) {
             return Optional.empty();
         }
 
-        return Optional.of(iCustomerRepository.save(updateCustomerDTO));
+        return Optional.of(iCustomerRepository.save(updatedCustomerDTO));
 
     }
 
@@ -105,7 +105,7 @@ public class CustomerService implements ICustomerUseCase {
     @Override
     public boolean delete(String cardId) {
 
-        if (iCustomerRepository.getCustomerByCardId(cardId).isEmpty()) {
+        if (iCustomerRepository.getCustomer(cardId).isEmpty()) {
             return false;
         }
 
@@ -114,16 +114,20 @@ public class CustomerService implements ICustomerUseCase {
 
     }
 
+    /**
+     * Genera un Password con Valores Aleatorios
+     *
+     * @param passwordLength Recibe la Cantidad de Caracteres para el Password
+     * @return Devuelve el Password Generado
+     */
     private String generateRandomPassword(int passwordLength) {
 
         // Rango ASCII - Alfanumérico (a-z, A-Z, 0-9)
         final String charRange = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
         SecureRandom secureRandom = new SecureRandom();
         StringBuilder stringBuilder = new StringBuilder();
 
-        // En cada Iteración del Bucle se elige aleatoriamente un Carácter del Rango ASCII
-        // y lo agrega a la Instancia de "StringBuilder"
+        // En cada Iteración del Bucle se elige aleatoriamente un Carácter del Rango ASCII y lo agrega a la Instancia de "StringBuilder"
         for (int i = 0; i < passwordLength; i++) {
             int randomIndex = secureRandom.nextInt(charRange.length());
             stringBuilder.append(charRange.charAt(randomIndex));

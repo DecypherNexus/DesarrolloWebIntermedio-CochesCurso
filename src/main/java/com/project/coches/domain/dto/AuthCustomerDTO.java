@@ -1,18 +1,21 @@
 package com.project.coches.domain.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
- * DTO de Salida de "Cliente"
+ * DTO de "Autenticación"
  */
 @Getter @Setter
-@AllArgsConstructor
-public class CustomerResponseDTO {
+public class AuthCustomerDTO {
 
     /**
-     * Contraseña del Cliente
+     * Email del Cliente
+     */
+    private String email;
+
+    /**
+     * Password del Cliente
      */
     private String password;
 

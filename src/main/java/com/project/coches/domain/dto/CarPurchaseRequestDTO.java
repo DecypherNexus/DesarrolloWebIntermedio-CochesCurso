@@ -22,11 +22,11 @@ public class CarPurchaseRequestDTO {
     /**
      * Cantidad de los Coches de la Compra
      */
-    private Double quantity;
+    private Integer quantity;
 
     /**
      * Total de los Coches de la Compra
      */
-    private Double total;
+    private Integer total;
 
 }

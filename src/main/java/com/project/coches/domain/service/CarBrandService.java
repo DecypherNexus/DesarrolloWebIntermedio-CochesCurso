@@ -34,7 +34,7 @@ public class CarBrandService implements ICarBrandUseCase {
     /**
      * Obtiene una Marca de Coche por el Id
      *
-     * @param id Recibe el Id de la Marca de Coche
+     * @param id Recibe el Id de la Marca de Coche a Buscar
      * @return Devuelve el Optional de la Marca de Coche Encontrada
      */
     @Override
@@ -56,18 +56,17 @@ public class CarBrandService implements ICarBrandUseCase {
     /**
      * Actualiza una Marca de Coche
      *
-     * @param updateCarBrandDTO Recibe la Marca de Coche a Actualizar
+     * @param updatedCarBrandDTO Recibe la Marca de Coche a Actualizar
      * @return Devuelve la Marca de Coche Actualizada
      */
-
     @Override
-    public Optional<CarBrandDTO> update(CarBrandDTO updateCarBrandDTO) {
+    public Optional<CarBrandDTO> update(CarBrandDTO updatedCarBrandDTO) {
 
-        if (iCarBrandRepository.getCarBrand(updateCarBrandDTO.getId()).isEmpty()) {
+        if (iCarBrandRepository.getCarBrand(updatedCarBrandDTO.getId()).isEmpty()) {
             return Optional.empty();
         }
 
-        return Optional.of(iCarBrandRepository.save(updateCarBrandDTO));
+        return Optional.of(iCarBrandRepository.save(updatedCarBrandDTO));
 
     }
 

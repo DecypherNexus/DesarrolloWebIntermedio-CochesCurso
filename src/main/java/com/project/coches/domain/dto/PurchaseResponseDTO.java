@@ -40,6 +40,6 @@ public class PurchaseResponseDTO {
     /**
      * Lista de los Carros de la Compra
      */
-    private List<CarPurchaseResponseDTO> purchaseCars;
+    private List<CarPurchaseResponseDTO> carPurchaseResponseDTOs;
 
 }

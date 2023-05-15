@@ -30,7 +30,7 @@ public class CustomerDTO {
     private Double cellphoneNumber;
 
     /**
-     * Estatus del Cliente
+     * Estatus del role
      */
     private Integer active;
 
@@ -38,5 +38,10 @@ public class CustomerDTO {
      * Contraseña del Cliente
      */
     private String password;
+
+    /**
+     * Rol del Cliente
+     */
+    private String role;
 
 }

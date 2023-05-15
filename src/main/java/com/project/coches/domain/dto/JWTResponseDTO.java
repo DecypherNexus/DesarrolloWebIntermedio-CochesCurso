@@ -5,15 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * DTO de Salida de "Cliente"
+ * DTO de Salida de "JWT"
  */
 @Getter @Setter
 @AllArgsConstructor
-public class CustomerResponseDTO {
+public class JWTResponseDTO {
 
     /**
-     * Contraseña del Cliente
+     * JWT de la Autenticación
      */
-    private String password;
+    private String jwt;
 
 }

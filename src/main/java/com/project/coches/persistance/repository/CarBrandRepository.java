@@ -47,8 +47,8 @@ public class CarBrandRepository implements ICarBrandRepository {
     public Optional<CarBrandDTO> getCarBrand(Integer id) {
         return iCarBrandCRUDRepository.findById(id)
                 .map(iCarBrandMapper::toCarBrandDTO);
-        // .map(carBrandEntity -> iCarBrandMapper.toCarBrandPojo(carBrandEntity)); -> Función Lambda
-        // .map(iCarBrandMapper::toCarBrandPojo); -> Métodod por Referencia
+                // .map(carBrandEntity -> iCarBrandMapper.toCarBrandPojo(carBrandEntity)); -> Función Lambda
+                // .map(iCarBrandMapper::toCarBrandPojo); -> Métodod por Referencia
     }
 
     /**

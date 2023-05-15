@@ -6,8 +6,7 @@ import lombok.Setter;
 /**
  * DTO de "Marca_Coche"
  */
-@Getter
-@Setter
+@Getter @Setter
 public class CarBrandDTO {
 
     /**

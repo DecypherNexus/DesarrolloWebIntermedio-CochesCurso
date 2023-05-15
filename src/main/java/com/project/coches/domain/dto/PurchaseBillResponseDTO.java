@@ -5,15 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * DTO de Salida de "Cliente"
+ * DTO de Salida de "Factura Compra"
  */
 @Getter @Setter
 @AllArgsConstructor
-public class CustomerResponseDTO {
+public class PurchaseBillResponseDTO {
 
     /**
-     * Contraseña del Cliente
+     * Número de Factura de la Compra
      */
-    private String password;
+    private Integer billNumber;
 
 }

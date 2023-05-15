@@ -78,17 +78,17 @@ public class CarService implements ICarUseCase {
     /**
      * Actualiza un Coche
      *
-     * @param updateCarDTO Recibe el Coche a Actualizar
+     * @param updatedCarDTO Recibe el Coche a Actualizar
      * @return Devuelve el Coche Actualizado
      */
     @Override
-    public Optional<CarDTO> update(CarDTO updateCarDTO) {
+    public Optional<CarDTO> update(CarDTO updatedCarDTO) {
 
-        if (iCarRepository.getCar(updateCarDTO.getCarCode()).isEmpty()) {
+        if (iCarRepository.getCar(updatedCarDTO.getCarCode()).isEmpty()) {
             return Optional.empty();
         }
 
-        return Optional.of(iCarRepository.save(updateCarDTO));
+        return Optional.of(iCarRepository.save(updatedCarDTO));
 
     }
 

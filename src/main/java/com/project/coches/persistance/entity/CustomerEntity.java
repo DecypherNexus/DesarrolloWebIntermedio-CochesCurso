@@ -52,6 +52,12 @@ public class CustomerEntity {
     private String password;
 
     /**
+     * Contraseña del Cliente
+     */
+    @Column(name = "rol")
+    private String role;
+
+    /**
      * Relación de Uno a Muchos a "Compras"
      */
     @OneToMany(mappedBy = "customerEntity")

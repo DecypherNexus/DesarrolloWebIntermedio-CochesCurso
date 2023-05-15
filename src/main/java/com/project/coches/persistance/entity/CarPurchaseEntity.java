@@ -22,13 +22,13 @@ public class CarPurchaseEntity {
      * Cantidad de los Coches de la Compra
      */
     @Column(name = "cantidad")
-    private Double quantity;
+    private Integer quantity;
 
     /**
      * Total de los Coches de la Compra
      */
     @Column(name = "total")
-    private Double total;
+    private Integer total;
 
     /**
      * Relación de Muchos a Uno a "Coches"

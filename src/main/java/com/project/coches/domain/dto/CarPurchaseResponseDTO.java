@@ -1,5 +1,6 @@
 package com.project.coches.domain.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,6 +8,7 @@ import lombok.Setter;
  * DTO de Salida de "Coches_Compras"
  */
 @Getter @Setter
+@AllArgsConstructor
 public class CarPurchaseResponseDTO {
 
     /**
@@ -17,11 +19,11 @@ public class CarPurchaseResponseDTO {
     /**
      * Cantidad de los Coches de la Compra
      */
-    private Double quantity;
+    private Integer quantity;
 
     /**
      * Total de los Coches de la Compra
      */
-    private Double total;
+    private Integer total;
 
 }

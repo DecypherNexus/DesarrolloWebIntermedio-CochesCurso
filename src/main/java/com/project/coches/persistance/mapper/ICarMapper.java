@@ -16,6 +16,7 @@ public interface ICarMapper {
 
     /**
      * Convierte una Entidad a un DTO de "Coches"
+     *
      * @param carEntity Recibe una Entidad
      * @return Devuelve un DTO
      */
@@ -39,6 +40,7 @@ public interface ICarMapper {
 
     /**
      * Convierte un DTO a una Entidad de "Coches"
+     *
      * @param carDTO Recibe un DTO
      * @return Devuelve una Entidad
      */
@@ -49,6 +51,7 @@ public interface ICarMapper {
 
     /**
      * Convierte una Lista de Entidades a una Lista de DTOs de "Coches"
+     *
      * @param carEntities Recibe una Lista de Entidades
      * @return Devuelve una Lista de DTOs
      */

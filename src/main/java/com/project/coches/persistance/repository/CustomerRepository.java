@@ -44,7 +44,7 @@ public class CustomerRepository implements ICustomerRepository {
      * @return Devuelve el Optional del Cliente Encontrado
      */
     @Override
-    public Optional<CustomerDTO> getCustomerByCardId(String cardId) {
+    public Optional<CustomerDTO> getCustomer(String cardId) {
         return iCustomerCRUDRepository.findById(cardId)
                 .map(iCustomerMapper::toCustomerDTO);
     }

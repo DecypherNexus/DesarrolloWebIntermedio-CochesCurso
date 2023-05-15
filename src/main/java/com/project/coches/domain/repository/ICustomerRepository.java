@@ -23,7 +23,7 @@ public interface ICustomerRepository {
      * @param cardId Recibe la Cedula del Cliente a Buscar
      * @return Devuelve el Optional del Cliente Encontrado
      */
-    Optional<CustomerDTO> getCustomerByCardId(String cardId);
+    Optional<CustomerDTO> getCustomer(String cardId);
 
     /**
      * Obtiene un Cliente por el Email

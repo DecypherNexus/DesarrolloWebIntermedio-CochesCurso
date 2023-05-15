@@ -16,6 +16,7 @@ public interface ICustomerMapper {
 
     /**
      * Convierte una Entidad a un DTO de "Cliente"
+     *
      * @param customerEntity Recibe una Entidad
      * @return Devuelve un DTO
      */
@@ -25,10 +26,12 @@ public interface ICustomerMapper {
     @Mapping(source = "cellphoneNumber", target = "cellphoneNumber")
     @Mapping(source = "active", target = "active")
     @Mapping(source = "password", target = "password")
+    @Mapping(source = "role", target = "role")
     CustomerDTO toCustomerDTO(CustomerEntity customerEntity);
 
     /**
      * Convierte un DTO a una Entidad de "Cliente"
+     *
      * @param customerDTO Recibe un DTO
      * @return Devuelve una Entidad
      */
@@ -38,6 +41,7 @@ public interface ICustomerMapper {
 
     /**
      * Convierte una Lista de Entidades a una Lista de DTOs de "Cliente"
+     *
      * @param customerEntities Recibe una Lista de Entidades
      * @return Devuelve una Lista de DTOs
      */

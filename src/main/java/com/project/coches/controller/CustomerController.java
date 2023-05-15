@@ -40,8 +40,8 @@ public class CustomerController {
      * @return Devuelve un Código Http "OK" en el caso de que el Cliente haya sido encontrado o un Código Http "NOT FOUND" en el caso contrario
      */
     @GetMapping(path = "/{cardId}")
-    public ResponseEntity<CustomerDTO> getCustomerByCardId(@PathVariable String cardId) {
-        return ResponseEntity.of(iCustomerUseCase.getCustomerByCardId(cardId));
+    public ResponseEntity<CustomerDTO> getCustomer(@PathVariable String cardId) {
+        return ResponseEntity.of(iCustomerUseCase.getCustomer(cardId));
     }
 
     /**
